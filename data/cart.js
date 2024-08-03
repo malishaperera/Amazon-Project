@@ -1,50 +1,36 @@
-export const cart = [{
-  productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
-  quantity: 2
+export const cart = [
+  {
+    productId: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
+    quantity: 2,
+  },
+  {
+    productId: "15b6fc6f-327a-4ec4-896f-486349e85a3d",
+    quantity: 1,
+  },
+  {
+    productId: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
+    quantity: 1,
+  },
+];
 
-},
-{
-  productId:'15b6fc6f-327a-4ec4-896f-486349e85a3d',
-  quantity:1
-
-}];
-
-
-export function addToCart(productId){
-
+export function addToCart(productId) {
   let matchingItem;
 
   //check if the product is already in the cart
   cart.forEach((cartItem) => {
-    if(productId === cartItem.productId){
+    if (productId === cartItem.productId) {
       matchingItem = cartItem;
     }
   });
 
   //if it is in the cart, increase the quantity
-  if(matchingItem){
+  if (matchingItem) {
     matchingItem.quantity += 1;
-  }else{
+  } else {
     //if it's not in the cart, add it to the cart.
     cart.push({
-      productId:productId,
-      quantity: 1
+      productId: productId,
+      quantity: 1,
     });
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
